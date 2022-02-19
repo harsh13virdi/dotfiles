@@ -1,0 +1,21 @@
+set $wallpaper /home/harsh/.livewallpaper/mpv-shot0001.jpg
+
+set $background #0c091b
+set $foreground #a2c2db
+
+set $color0 #0c091b
+set $color1 #295969
+set $color2 #535F70
+set $color3 #9F7774
+set $color4 #2C6B9C
+set $color5 #4B729F
+set $color6 #3589E2
+set $color7 #a2c2db
+set $color8 #718799
+set $color9 #295969
+set $color10 #535F70
+set $color11 #9F7774
+set $color12 #2C6B9C
+set $color13 #4B729F
+set $color14 #3589E2
+set $color15 #a2c2db

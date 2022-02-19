@@ -1,0 +1,23 @@
+" Special
+let wallpaper  = "/home/harsh/.livewallpaper/mpv-shot0001.jpg"
+let background = "#0c091b"
+let foreground = "#a2c2db"
+let cursor     = "#a2c2db"
+
+" Colors
+let color0  = "#0c091b"
+let color1  = "#295969"
+let color2  = "#535F70"
+let color3  = "#9F7774"
+let color4  = "#2C6B9C"
+let color5  = "#4B729F"
+let color6  = "#3589E2"
+let color7  = "#a2c2db"
+let color8  = "#718799"
+let color9  = "#295969"
+let color10 = "#535F70"
+let color11 = "#9F7774"
+let color12 = "#2C6B9C"
+let color13 = "#4B729F"
+let color14 = "#3589E2"
+let color15 = "#a2c2db"

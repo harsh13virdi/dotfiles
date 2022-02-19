@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/home/harsh/.livewallpaper/mpv-shot0001.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#0c091b",
+        "foreground": "#a2c2db",
+        "cursor": "#a2c2db"
+    },
+    "colors": {
+        "color0": "#0c091b",
+        "color1": "#295969",
+        "color2": "#535F70",
+        "color3": "#9F7774",
+        "color4": "#2C6B9C",
+        "color5": "#4B729F",
+        "color6": "#3589E2",
+        "color7": "#a2c2db",
+        "color8": "#718799",
+        "color9": "#295969",
+        "color10": "#535F70",
+        "color11": "#9F7774",
+        "color12": "#2C6B9C",
+        "color13": "#4B729F",
+        "color14": "#3589E2",
+        "color15": "#a2c2db"
+    }
+}

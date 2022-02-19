@@ -1,0 +1,6 @@
+#!/bin/sh
+killall -9 xwinwrap
+
+wp=$(cat $HOME/scripts/wallpaper-save)
+
+xwinwrap -g 1920x1080+0+0 -un -fdt -ni -b -nf -ov -- $HOME/scripts/wallpaper-live WID $wp &
