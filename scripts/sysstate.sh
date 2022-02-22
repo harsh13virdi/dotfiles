@@ -24,4 +24,16 @@ gputmp(){
 	echo -e " : $gputmp"
 }
 
-echo " [ $(mem) ] [ $(cpuusg) $(cputmp) ] [ $(gpuusg) $(gputmp) ] "
+traffic(){
+    logfile="${XDG_CACHE_HOME:-$HOME/.cache}/netlog"
+    prevdata="$(cat "$logfile")"
+
+    rxcurrent="$(($(cat /sys/class/net/*/statistics/rx_bytes | paste -sd '+')))"
+    txcurrent="$(($(cat /sys/class/net/*/statistics/tx_bytes | paste -sd '+')))"
+
+    printf " %sKiB  %sKiB\\n" "$(((rxcurrent-${prevdata%% *})/1024))" "$(((txcurrent-${prevdata##* })/1024))"
+
+    echo "$rxcurrent $txcurrent" > "$logfile"
+}
+
+echo "[ $(traffic) ] [ $(mem) ] [ $(cpuusg) $(cputmp) ] [ $(gpuusg) $(gputmp) ] "
