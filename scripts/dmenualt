@@ -1,0 +1,9 @@
+#!/bin/bash
+
+normbgcolor="$(cat ~/.cache/wal/Xresources | grep normbgcolor | awk '{print $2}')"
+normfgcolor="$(cat ~/.cache/wal/Xresources | grep normfgcolor | awk '{print $2}')"
+selbgcolor="$(cat ~/.cache/wal/Xresources | grep selbgcolor | awk '{print $2}')"
+selfgcolor="$(cat ~/.cache/wal/Xresources | grep selfgcolor | awk '{print $2}')"
+
+printf " -fn TerminessTTF\ Nerd\ Font:size=14 -nb \'$normbgcolor\' -nf \'$normfgcolor\' -sb \'$selbgcolor\' -sf \'$selfgcolor\'" | xargs -r dmenu_run
+
