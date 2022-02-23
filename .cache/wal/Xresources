@@ -1,7 +1,7 @@
-dwm.normbordercolor: #718799
-dwm.normbgcolor:     #0c091b
-dwm.normfgcolor:     #a2c2db
-dwm.selbordercolor:  #a2c2db
-dwm.selbgcolor:      #a2c2db
-dwm.selfgcolor:      #535F70
+*.normbordercolor: #718799
+*.normbgcolor:     #0c091b
+*.normfgcolor:     #a2c2db
+*.selbordercolor:  #a2c2db
+*.selbgcolor:      #a2c2db
+*.selfgcolor:      #535F70
 

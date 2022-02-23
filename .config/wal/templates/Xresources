@@ -1,7 +1,7 @@
-dwm.normbordercolor: {color8}
-dwm.normbgcolor:     {color0}
-dwm.normfgcolor:     {color7}
-dwm.selbordercolor:  {color7}
-dwm.selbgcolor:      {color7}
-dwm.selfgcolor:      {color2}
+*.normbordercolor: {color8}
+*.normbgcolor:     {color0}
+*.normfgcolor:     {color7}
+*.selbordercolor:  {color7}
+*.selbgcolor:      {color7}
+*.selfgcolor:      {color2}
 

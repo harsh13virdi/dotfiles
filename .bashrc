@@ -39,8 +39,5 @@ alias updatevis='tail -n 14 ~/.cache/wal/colors > ~/.config/vis/colors/pywal'
 #Restoring Pywal on new Terminals
 wal -R && clear
 
-#archbtw
-pfetch
-
 #Starship Prompt
 eval "$(starship init bash)"

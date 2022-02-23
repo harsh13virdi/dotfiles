@@ -31,9 +31,9 @@ traffic(){
     rxcurrent="$(($(cat /sys/class/net/*/statistics/rx_bytes | paste -sd '+')))"
     txcurrent="$(($(cat /sys/class/net/*/statistics/tx_bytes | paste -sd '+')))"
 
-    printf " %sKiB  %sKiB\\n" "$(((rxcurrent-${prevdata%% *})/1024))" "$(((txcurrent-${prevdata##* })/1024))"
+    printf " %sMiB  %sMiB\\n" "$((((rxcurrent-${prevdata%% *})/1024)/1024))" "$((((txcurrent-${prevdata##* })/1024)/1024))"
 
     echo "$rxcurrent $txcurrent" > "$logfile"
 }
 
-echo "[ $(traffic) ] [ $(mem) ] [ $(cpuusg) $(cputmp) ] [ $(gpuusg) $(gputmp) ] "
+echo " [ $(traffic) ] [ $(mem) ] [ $(cpuusg) $(cputmp) ] [ $(gpuusg) $(gputmp) ] "
