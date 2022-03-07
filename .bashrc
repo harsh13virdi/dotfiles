@@ -11,6 +11,7 @@
 
 #Quality of life changes
 shopt -s autocd
+set -o vi
 
 #ShortCuts
 alias ls='ls --color=auto'
@@ -34,6 +35,8 @@ alias stuff='cd /mnt/MoreStuff'
 alias sethdmi='xrandr --output HDMI-0 --mode 1920x1080 -r 143.98 &'
 alias setdp='xrandr --output DP-4 --mode 1920x1080 -r 143.98 &'
 alias updatevis='tail -n 14 ~/.cache/wal/colors > ~/.config/vis/colors/pywal'
+
+wal -R && clear 
 
 #Starship Prompt
 eval "$(starship init bash)"
