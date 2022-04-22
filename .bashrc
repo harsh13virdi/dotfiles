@@ -29,11 +29,11 @@ export PATH="$HOME/scripts/:$HOME/.local/bin/:$PATH"
 export EDITOR=vim
 
 #Directories
-alias stuff='cd /mnt/MoreStuff'
+alias stuff='cd /media/MoreStuff'
 
 #Repeated Actions
 alias sethdmi='xrandr --output HDMI-0 --mode 1920x1080 -r 143.98 &'
-alias setdp='xrandr --output DP-4 --mode 1920x1080 -r 143.98 &'
+alias setdp='xrandr --output DP-2 --mode 1920x1080 -r 143.98 &'
 alias updatevis='tail -n 14 ~/.cache/wal/colors > ~/.config/vis/colors/pywal'
 
 wal -R && clear 
