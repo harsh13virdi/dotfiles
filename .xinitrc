@@ -1,8 +1,5 @@
 #Auto starting programs/scripts
 
-# Restoring LiveWallpaper
-wallpaper-wrap &
-
 # Statusbar configuration
 dwmblocks &
 
