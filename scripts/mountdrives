@@ -1,0 +1,22 @@
+#!/bin/sh
+
+sudo mkdir /mnt/SysBak
+sudo mkdir /mnt/MoreStuff
+
+sysbak(){
+    driveuuid="$(sudo blkid | grep SystemBackup | awk -F "\"" '{print $4}')"
+    echo -e "UUID=$driveuuid       /mnt/SysBak  ext4            defaults     0 0"
+}
+
+
+morestuff(){
+    driveuuid="$(sudo blkid | grep MoreStuff | awk -F "\"" '{print $4}')"
+    echo -e "UUID=$driveuuid       /mnt/MoreStuff  ext4            defaults     0 0"
+}
+
+cp /etc/fstab /etc/fstab.bak
+
+echo $(morestuff) >> /etc/fstab
+echo $(sysbak) >> /etc/fstab
+
+cat /etc/fstab
