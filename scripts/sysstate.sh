@@ -24,16 +24,4 @@ gputmp(){
 	echo -e " : $gputmp"
 }
 
-traffic(){
-    logfile="${XDG_CACHE_HOME:-$HOME/.cache}/netlog"
-    prevdata="$(cat "$logfile")"
-
-    rxcurrent="$(($(cat /sys/class/net/*/statistics/rx_bytes | paste -sd '+')))"
-    txcurrent="$(($(cat /sys/class/net/*/statistics/tx_bytes | paste -sd '+')))"
-
-    printf " %sMiB  %sMiB\\n" "$(((((rxcurrent-${prevdata%% *})/1024)/1024)/5))" "$(((((txcurrent-${prevdata##* })/1024)/1024)/5))"
-
-    echo "$rxcurrent $txcurrent" > "$logfile"
-}
-
-echo " [ $(traffic) ] [ $(mem) ] [ $(cpuusg) $(cputmp) ] [ $(gpuusg) $(gputmp) ] "
+echo " [$(mem)][$(cpuusg)$(cputmp)][$(gpuusg)$(gputmp)] "
