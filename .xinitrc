@@ -1,5 +1,8 @@
 #Auto starting programs/scripts
 
+# Restoring Wallpaper
+nitrogen --restore
+
 # Statusbar configuration
 dwmblocks &
 
