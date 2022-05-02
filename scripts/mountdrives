@@ -1,7 +1,7 @@
 #!/bin/sh
 
-sudo mkdir /mnt/SysBak
-sudo mkdir /mnt/MoreStuff
+mkdir /mnt/SysBak
+mkdir /mnt/MoreStuff
 
 sysbak(){
     driveuuid="$(sudo blkid | grep SystemBackup | awk -F "\"" '{print $4}')"
