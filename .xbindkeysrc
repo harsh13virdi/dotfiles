@@ -68,6 +68,8 @@
 "st htop"
   control+shift + Escape
 
+"st fuzzyopen"
+  control+shift + f
 
 ##################################
 # End of xbindkeys configuration #
