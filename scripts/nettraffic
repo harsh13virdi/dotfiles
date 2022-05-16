@@ -6,9 +6,9 @@ prevdata="$(cat "$logfile")"
 rxcurrent="$(($(cat /sys/class/net/*/statistics/rx_bytes | paste -sd '+')))"
 txcurrent="$(($(cat /sys/class/net/*/statistics/tx_bytes | paste -sd '+')))"
 
-printf "%sKiB  %sKiB\\n" \
-"$(((rxcurrent-${prevdata%% *})/1024))" \
-"$(((txcurrent-${prevdata##* })/1024))"
+printf "ﰬ %sMiB  ﰵ %sMiB\\n" \
+"$(((((rxcurrent-${prevdata%% *})/1024)/1024)/5))" \
+"$(((((txcurrent-${prevdata##* })/1024)/1024)/5))"
 
 echo "$rxcurrent $txcurrent" > "$logfile"
 
