@@ -2,26 +2,36 @@
 
 mem(){
 	mem="$(free | awk '/^Mem/ { print int(($3/$2)*100) }' | sed s/$/%/)"
-	echo -e " : $mem"
+	echo -e " :$mem"
 }
 
 cpuusg(){
 	cpuusg="$(top -bn1 | grep Cpu | awk '{print int($2)}' | sed s/$/%/)"
-	echo -e "﬙ : $cpuusg"
+	echo -e "﬙ :$cpuusg"
 }
 
 cputmp(){
-	cputmp="$(sensors | awk '/^Tctl:/ {print int($2)}' | sed s/+// | sed s/$/C/)"
-	echo -e " : $cputmp"
+	cputmp="$(sensors | awk '/^Package/ {print int($4)}' | sed s/+// | sed s/$/C/)"
+	echo -e " :$cputmp"
 }
 
-gpuusg(){
-	gpuusg="$(nvidia-smi | grep Default | awk '{print $13}')"
-	echo -e " : $gpuusg"
-}
-gputmp(){
-	gputmp="$(nvidia-smi | grep Default | awk '{print $3}')"
-	echo -e " : $gputmp"
+bat(){
+	cap="$(cat /sys/class/power_supply/BAT0/capacity)"
+
+    if [ $"(cat /sys/class/power_supply/BAT0/status)" = Charging ]; then
+            echo  ":$cap%"
+        else
+            echo  ":$cap%"
+    fi
 }
 
-echo " [$(mem)][$(cpuusg)$(cputmp)][$(gpuusg)$(gputmp)] "
+nettraf(){
+    nettraffic
+    }
+
+wifi(){
+    wifi="$(nmcli connection show | grep wlp4s0 | awk '{print $1}')"
+    echo  "  $wifi"
+}
+
+echo " [$(nettraf)] [$(wifi)] [$(mem)] [$(cpuusg) $(cputmp)] [$(bat)] "
