@@ -16,13 +16,7 @@ cputmp(){
 }
 
 bat(){
-	cap="$(cat /sys/class/power_supply/BAT0/capacity)"
-
-    if [ $"(cat /sys/class/power_supply/BAT0/status)" = Charging ]; then
-            echo  ":$cap%"
-        else
-            echo  ":$cap%"
-    fi
+	batterystatus
 }
 
 nettraf(){
