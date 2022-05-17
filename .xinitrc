@@ -19,6 +19,9 @@ xrandr --output DP-2 --mode 1920x1080 -r 143.98 &
 # Keyboard Shortcuts
 xbindkeys &
 
+# Noise Suppression
+rnnoise activate &
+
 # Starting Backup & Sync
 syncthing --no-browser &
 
