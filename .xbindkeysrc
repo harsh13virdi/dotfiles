@@ -70,6 +70,9 @@
 
 "st fuzzyopen"
   control+shift + f
+  
+"slock"
+  mod4 + Escape
 
 ##################################
 # End of xbindkeys configuration #
