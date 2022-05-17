@@ -5,7 +5,9 @@ ip addr show
 echo "Enter your network device: "
 read netdev
 
-echo "net.ipv6.conf.all.disable_ipv6 = 1" | sudo tee -a /etc/sysctl.d/40-ipv6.conf
+echo "net.ipv6.conf.all.disable_ipv6 = 1" | sudo tee /etc/sysctl.d/40-ipv6.conf
 echo "net.ipv6.conf.$netdev.disable_ipv6 = 1" | sudo tee -a /etc/sysctl.d/40-ipv6.conf
 
 cat /etc/sysctl.d/40-ipv6.conf
+
+echo "Add -->sudo systemctl restart systemd-sysctl.service &<-- to your init script of liking to automatically unbind the ipv6 address assigned to your ethernet controller"
