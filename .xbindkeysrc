@@ -70,9 +70,15 @@
 
 "st fuzzyopen"
   control+shift + f
-  
+
 "slock"
   mod4 + Escape
+
+"discord"
+  control+mod1 + d
+
+"st calcurse"
+  control+mod1 + c
 
 ##################################
 # End of xbindkeys configuration #
