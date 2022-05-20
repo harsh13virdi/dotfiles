@@ -80,6 +80,9 @@
 "st calcurse"
   control+mod1 + c
 
+"st aerc"
+  control+mod1 + m
+
 ##################################
 # End of xbindkeys configuration #
 ##################################
