@@ -74,9 +74,6 @@
 "slock"
   mod4 + Escape
 
-"discord"
-  control+mod1 + d
-
 "st calcurse"
   control+mod1 + c
 
