@@ -28,13 +28,6 @@ export PATH="$HOME/scripts/:$HOME/.local/bin/:$PATH"
 #Default Text Editor
 export EDITOR=vim
 
-#Directories
-alias stuff='cd /mnt/MoreStuff'
-
-#Repeated Actions
-alias sethdmi='xrandr --output HDMI-0 --mode 1920x1080 -r 143.98 &'
-alias setdp='xrandr --output DP-2 --mode 1920x1080 -r 143.98 &'
-
 wal -R && clear 
 
 #Starship Prompt
