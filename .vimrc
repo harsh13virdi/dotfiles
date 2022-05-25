@@ -15,3 +15,10 @@ set undodir=~/.vim/undodir
 set undofile
 set incsearch
 set scrolloff=8
+
+let mapleader = " "
+
+set path+=**
+set wildmenu
+
+command! MakeTags !ctags -R
