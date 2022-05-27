@@ -4,7 +4,9 @@
 
 FILE="$(fzf)"
 
-read -p "What program do you want to open the file with? " programe
+# read -p "What program do you want to open the file with? " programe
+
+programe="$(printf "vim\nsxiv\nmpv" | dmenu)"
 
 if [[ $programe = vim ]] ; then
     vim "$FILE"
