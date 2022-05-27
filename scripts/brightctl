@@ -1,0 +1,25 @@
+#! /bin/sh
+
+NUM="${2:-100}"
+
+blevel="$(cat /sys/class/backlight/intel_backlight/brightness)"
+
+
+down() { 
+    if [ $blevel -gt 100 ] ; then
+    echo "$((blevel-NUM))" | sudo tee /sys/class/backlight/intel_backlight/brightness
+    fi
+}
+
+up() { 
+    if [ $blevel -lt 900 ] ; then
+    echo "$((blevel+NUM))" | sudo tee /sys/class/backlight/intel_backlight/brightness
+    fi
+}
+
+case "$1" in
+	up) up ;;
+	down) down ;;
+
+esac >/dev/null
+
