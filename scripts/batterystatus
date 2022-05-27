@@ -11,3 +11,7 @@ bat(){
 }
 
 echo "$(bat)"
+
+if [ $(cat /sys/class/power_supply/BAT0/capacity) -lt 15 ]; then
+    notify-send -u critical Battery\ Low Battery\ is\ below\ critcal\ level
+fi
