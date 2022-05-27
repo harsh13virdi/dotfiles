@@ -1,3 +1,17 @@
 #! /bin/sh
 
-vim "$(fzf)"
+# vim "$(fzf)"
+
+FILE="$(fzf)"
+
+read -p "What program do you want to open the file with? " programe
+
+if [[ $programe = vim ]] ; then
+    vim "$FILE"
+
+elif [[ $programe = sxiv ]] ; then
+    sxiv "$FILE"
+
+elif [[ $programe = mpv ]] ; then
+    mpv "$FILE"
+fi
