@@ -83,6 +83,9 @@
 "st aerc"
   control+mod1 + m
 
+"mutemic"
+  m:0x0 + c:198
+
 ##################################
 # End of xbindkeys configuration #
 ##################################
