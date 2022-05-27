@@ -1,0 +1,3 @@
+#! /bin/sh
+
+pulsemixer --id "$(pulsemixer --list-sources | grep RNNoise\ Denoised\ Microphone | awk '{print $3}' | awk -F "," '{print $1}')" --toggle-mute
