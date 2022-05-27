@@ -1,0 +1,11 @@
+#! /bin/sh
+
+datefnc(){
+date '+%b %d (%a) %I:%M%p'
+}
+
+weather(){
+curl -s wttr.in | grep ° | awk 'NR==1{print $5$6}'
+}
+
+echo [$(weather)] [$(datefnc)]
