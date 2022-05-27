@@ -53,6 +53,12 @@
 "volctl toggle"
   m:0x0 + c:121
 
+"brightctl down"
+  m:0x0 + c:232
+
+"brightctl up"
+  m:0x0 + c:233
+
 "st ranger"
   control+shift + r
 
