@@ -1,5 +1,6 @@
 #! /bin/bash
 
+vol(){
 if   [ $(pulsemixer --get-mute) -eq 1 ]; 
 	then
 	echo "ﱝ"
@@ -17,3 +18,14 @@ else
 	echo "奄 :$(pulsemixer --get-volume | awk '{print $1}')%"
 	fi
 fi
+}
+
+mic(){
+    if [ "$(pulsemixer --id "$(pulsemixer --list-sources | grep RNNoise\ Denoised\ Microphone | awk '{print $3}' | awk -F "," '{print $1}')" --get-mute)" -eq 0 ]; then
+        echo ""
+    else
+        echo ""
+    fi
+}
+
+echo [$(vol)][$(mic)]
