@@ -68,8 +68,11 @@
 "mpdctl prev"
   mod4 + F2
 
-"st ncmpcpp"
+"mpdctl current"
   mod4 + F4
+
+"st ncmpcpp"
+  control+shift + m
 
 "st ranger"
   control+shift + r
