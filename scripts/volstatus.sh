@@ -32,7 +32,11 @@ music(){
 if [ -z "$(pidof mpd)" ] ; then
 	echo "ﱙ "
 else
-    echo ""
+    if [ $(mpc | awk 'NR==2{print $1}') == "[playing]" ] ; then
+        echo "  : $(mpc current)"
+    else
+        echo "栗"
+    fi
 fi
 }
 

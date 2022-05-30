@@ -3,31 +3,40 @@
 toggle() {
     if [ -z "$(pidof mpd)" ] ; then
         mpd
+        mpdctl notify
     else
         kill "$(pidof mpd)"
     fi
 }
 
 next() {
-    notify-send "Now Playing" "$(mpc current --wait)" &
-    sleep 1
     mpc next
 }
 prev() {
-    notify-send "Now Playing" "$(mpc current --wait)" &
-    sleep 1
     mpc prev
 }
 
-current(){
-    notify-send "Currently Playing" "$(mpc current --wait)"
+pp(){
+    if [ $(mpc | awk 'NR==2{print $1}') == "[playing]" ] ; then
+        mpc pause
+    else
+        mpc play
+    fi
+}
+
+notify(){
+    while [ ! -z "$(pidof mpd)" ] ; do
+        mpc current --wait
+        pkill -RTMIN+10 dwmblocks
+    done
 }
 
 case "$1" in
 	toggle) toggle ;;
-    current) current ;;
+    pp) pp ;;
 	next) next ;;
 	prev) prev ;;
+    notify) notify ;;
 
 esac >/dev/null
 
