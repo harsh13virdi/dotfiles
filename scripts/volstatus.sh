@@ -28,4 +28,12 @@ mic(){
     fi
 }
 
-echo [$(vol)][$(mic)]
+music(){
+if [ -z "$(pidof mpd)" ] ; then
+	echo "ﱙ "
+else
+    echo ""
+fi
+}
+
+echo [$(vol)][$(mic)][$(music)]
