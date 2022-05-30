@@ -1,0 +1,34 @@
+#! /bin/sh
+
+toggle() {
+    if [ -z "$(pidof mpd)" ] ; then
+        mpd
+    else
+        kill "$(pidof mpd)"
+    fi
+}
+
+next() {
+    notify-send "Now Playing" "$(mpc current --wait)" &
+    sleep 1
+    mpc next
+}
+prev() {
+    notify-send "Now Playing" "$(mpc current --wait)" &
+    sleep 1
+    mpc prev
+}
+
+current(){
+    notify-send "Currently Playing" "$(mpc current --wait)"
+}
+
+case "$1" in
+	toggle) toggle ;;
+    current) current ;;
+	next) next ;;
+	prev) prev ;;
+
+esac >/dev/null
+
+pkill -RTMIN+10 dwmblocks
